@@ -15,7 +15,7 @@ export default function ExperienceCard({}: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src="/public/my-foto.png"
+        src="/my-foto.png"
         alt=""
       />
       <div className="px-0 md:px-10">
@@ -24,21 +24,21 @@ export default function ExperienceCard({}: Props) {
         <div className="flex space-x-2 my-2">
           <Image
             className="h-10 w-10 rounded-full"
-            src="/public/js.png"
+            src="/js.png"
             alt=""
             width={40}
             height={40}
           />
           <Image
             className="h-10 w-10 rounded-full"
-            src="/public/js.png"
+            src="/js.png"
             alt=""
             width={40}
             height={40}
           />{" "}
           <Image
             className="h-10 w-10 rounded-full"
-            src="/public/js.png"
+            src="/js.png"
             alt=""
             width={40}
             height={40}

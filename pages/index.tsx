@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import WorkExperience from "@/components/WorkExperience";
-import Skills from "@/components/Skill";
+import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import Link from "next/link";
@@ -14,7 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div>
+    <div
+      className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
+    scrollbar-thumb-[#F7AB0A]/80"
+    >
       <Header />
       <section id="hero" className="snap-start">
         <Hero />
@@ -47,7 +50,7 @@ export default function Home() {
               src={foto}
               width={600}
               height={600}
-              alt="Buttom to top"
+              alt="Button to top"
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             ></Image>
           </div>
