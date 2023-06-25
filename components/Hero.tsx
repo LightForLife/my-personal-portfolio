@@ -5,13 +5,17 @@ import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import foto from "../../../public/my-foto.png";
 import Link from "next/link";
+import { PageInfo } from "@/typings";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
   const [text, helper] = useTypewriter({
     words: [
-      "Hi, The Name's Artur Levchenko",
+      `Hi, The Name's ${pageInfo?.name}`,
       "Guy-who-loves-Coffe.tsx",
       "<ButLovesToCodeMore />",
     ],
@@ -24,14 +28,14 @@ export default function Hero({}: Props) {
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="/my-foto.png"
+        src={urlFor(pageInfo?.heroImage).url()}
         width={600}
         height={600}
-        alt="Foto of the author"
+        alt="Author's picture"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Frontend Developer
+          {pageInfo?.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>

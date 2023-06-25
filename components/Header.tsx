@@ -6,7 +6,8 @@ import { Social } from "@/typings";
 
 type Props = { socials: Social[] };
 
-export default function Header() {
+export default function Header({ socials }: Props) {
+  // console.log(socials);
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -16,23 +17,14 @@ export default function Header() {
         className="flex flex-row items-center"
       >
         {/* Social Icons */}
-
-        <SocialIcon
-          url="https://telegram.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://telegram.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-
-        <SocialIcon
-          url="https://telegram.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
 
       <motion.div

@@ -3,10 +3,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import image from "next/image";
 import foto from "@/public/my-foto.png";
+import { PageInfo } from "@/typings";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,25 +26,18 @@ export default function About({}: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src="/my-foto.png"
-        alt="foto"
+        src={urlFor(pageInfo?.profilePic).url()}
+        alt="Author's picture"
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
+
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
           Here is a{" "}
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
-          doloribus beatae facere nemo quas numquam labore omnis laudantium
-          optio, deleniti aliquam animi ducimus? Id, ab? Dolore magni cupiditate
-          quod accusamus. Lorem ipsum dolor, sit amet consectetur adipisicing
-          elit. Assumenda doloribus beatae facere nemo quas numquam labore omnis
-          laudantium optio, deleniti aliquam animi ducimus? Id, ab? Dolore magni
-          cupiditate quod accusamus.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
