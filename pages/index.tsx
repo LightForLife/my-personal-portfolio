@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -10,7 +11,26 @@ import Link from "next/link";
 import Image from "next/image";
 import foto from "../public/my-foto.png";
 
+import { PageInfo } from "@/typings";
+import { Experience } from "@/typings";
+import { Skill } from "@/typings";
+import { Project } from "@/typings";
+import { Social } from "@/typings";
+import { fetchPageInfo } from "@/utills/fetchPageInfo";
+import { fetchExperiences } from "@/utills/fetchExperiences";
+import { fetchSkills } from "@/utills/fetchSkills";
+import { fetchProjects } from "@/utills/fetchProjects";
+import { fetchSocials } from "@/utills/fetchSocials";
+
 const inter = Inter({ subsets: ["latin"] });
+
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+};
 
 export default function Home() {
   return (
@@ -59,3 +79,16 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: { pageInfo, experiences, skills, projects, socials },
+    revalidate: 10,
+  };
+};
