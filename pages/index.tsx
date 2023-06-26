@@ -10,7 +10,7 @@ import ContactMe from "@/components/ContactMe";
 import Link from "next/link";
 import Image from "next/image";
 import foto from "../public/my-foto.png";
-
+import { useState, useEffect } from "react";
 import { PageInfo } from "@/typings";
 import { Experience } from "@/typings";
 import { Skill } from "@/typings";
@@ -22,6 +22,8 @@ import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
 import { fetchSocials } from "@/utills/fetchSocials";
 import Head from "next/head";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +42,25 @@ export default function Home({
   projects,
   socials,
 }: Props) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const components = document.querySelectorAll("#component");
+    const container: HTMLElement = document.querySelector("#slider")!;
+
+    gsap.to(components, {
+      xPercent: -100 * (components.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        scrub: 1,
+        snap: 1 / (components.length - 1),
+        end: () => "+=" + container.offsetWidth,
+      },
+    });
+  }, []);
+
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
