@@ -21,6 +21,7 @@ import { fetchExperiences } from "@/utills/fetchExperiences";
 import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
 import { fetchSocials } from "@/utills/fetchSocials";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,9 +42,12 @@ export default function Home({
 }: Props) {
   return (
     <div
-      className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
+      className="bg-[rgb(36,36,36)] text-white h-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
     scrollbar-thumb-[#F7AB0A]/80"
     >
+      <Head>
+        <title>{pageInfo.name}</title>
+      </Head>
       {/* Header */}
       <Header socials={socials} />
 

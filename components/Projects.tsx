@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import pet from "../../../public/Pet.png";
 import { Project } from "@/typings";
 import { urlFor } from "@/sanity";
+import Image from "next/image";
+import { MdChevronRight } from "react-icons/md";
 
 type Props = {
   projects: Project[];
@@ -21,7 +23,7 @@ function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-auto snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projects.map((project, i) => (
           <div
             key={i}
@@ -45,10 +47,12 @@ function Projects({ projects }: Props) {
               </h4>
               <div className="flex items-center space-x-2 justify-center">
                 {project?.technologies.map((technology) => (
-                  <img
+                  <Image
                     className="h-10 w-10"
                     key={technology._id}
                     src={urlFor(technology.image).url()}
+                    width={500}
+                    height={500}
                     alt="A picture of the project on different devices"
                   />
                 ))}

@@ -12,7 +12,6 @@ type Props = {
 };
 
 export default function ExperienceCard({ experience }: Props) {
-  console.log(experience.dateStarted);
   return (
     <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:scale-110 duration-200 cursor-pointer overflow-hidden">
       <motion.img
