@@ -2,12 +2,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import pet from "../../../public/Pet.png";
+import { Project } from "@/typings";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
-
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,7 +32,7 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="pet.png"
+              src={urlFor(project?.image).url()}
               alt=""
             />
 
@@ -39,15 +41,20 @@ function Projects({}: Props) {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case Study {i + 1} of {projects.length}
                 </span>{" "}
+                {project.title}
               </h4>
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map((technology) => (
+                  <img
+                    className="h-10 w-10"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt="A picture of the project on different devices"
+                  />
+                ))}
+              </div>
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                deleniti alias quidem recusandae, corporis sed qui ipsam
-                cupiditate cumque aliquid et voluptatem dolores ipsum at nulla
-                dolorum ad eveniet facilis. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Optio deleniti alias quidem
-                recusandae, corporis sed qui ipsam cupiditate cumque aliquid et
-                voluptatem dolores ipsum at nulla dolorum ad eveniet facilis.
+                {project.summary}
               </p>
             </div>
           </div>
