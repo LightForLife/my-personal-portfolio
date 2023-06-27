@@ -13,7 +13,21 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  .projectsSlider .swiper-button-prev,
+  .projectsSlider .swiper-button-next {
+    @apply bg-[#F7AB0A] text-white top-[96%] md:top-[90%] w-[46px] rounded-full z-20;
+  }
+
+  .projectsSlider .swiper-button-prev {
+    @apply left-[35%] md:left-[40%] lg:left-[45%];
+  }
+
+  .projectsSlider .swiper-button-next {
+    @apply right-[35%] md:right-[40%] lg:right-[45%];
+  }
+
+  .projectsSlider .swiper-button-prev::after,
+  .projectsSlider .swiper-button-next::after {
+    @apply text-lg;
   }
 }
