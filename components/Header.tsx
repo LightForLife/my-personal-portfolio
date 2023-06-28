@@ -37,7 +37,7 @@ export default function Header({ socials }: Props) {
           download
           className="hidden md:inline-flex text-sm text-gray-400"
         >
-          Dovnload CV
+          Download CV
         </a>
         <SocialIcon
           className="cursor-pointer"
@@ -46,7 +46,7 @@ export default function Header({ socials }: Props) {
           bgColor="transparent"
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get In Touchs
+          Get In Touch
         </p>
       </motion.div>
     </header>
