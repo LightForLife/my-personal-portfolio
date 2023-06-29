@@ -6,11 +6,13 @@ import pet from "../../../public/Pet.png";
 import { Project } from "@/typings";
 import { urlFor } from "@/sanity";
 import Image from "next/image";
+// import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css";
+import Link from "next/link";
 
 type Props = {
   projects: Project[];
@@ -46,16 +48,27 @@ function Projects({ projects }: Props) {
                   viewport={{ once: true }}
                   src={urlFor(project?.image).width(600).url()}
                   alt="A picture of the project on different devices"
-                  className=""
+                  className=" w-[460px] md:w-[540px] xl:w-[600px]"
                 />
 
                 <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                  <h4 className="text-4xl font-semibold text-center">
-                    <span className="underline decoration-[#F7AB0A]/50">
+                  <span className="block text-2xl font-semibold text-center">
+                    Team Project {i + 1} of {projects.length}
+                  </span>{" "}
+                  <Link
+                    href={project.linkToBuild}
+                    // rel="noopener noreferrer"
+                    target="_blank"
+                    className="text-4xl font-semibold text-center underline decoration-[#F7AB0A]/50"
+                  >
+                    {/* <span className="underline decoration-[#F7AB0A]/50">
                       Case Study {i + 1} of {projects.length}
-                    </span>{" "}
+                    </span>{" "} */}
+                    {/* <span className="underline decoration-[#F7AB0A]/50">
+                      Case Study {i + 1} of {projects.length}
+                    </span>{" "} */}
                     {project.title}
-                  </h4>
+                  </Link>
                   <div className="flex items-center space-x-2 justify-center">
                     {project?.technologies.map((technology) => (
                       <Image
