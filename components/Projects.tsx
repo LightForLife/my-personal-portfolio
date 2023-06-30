@@ -36,7 +36,7 @@ function Projects({ projects }: Props) {
           className="projectsSlider z-30"
         >
           {projects.map((project, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={project._id}>
               <div className="w-screen text-center flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-[20px] md:p-44 h-screen">
                 <motion.img
                   initial={{ y: -300, opacity: 0 }}
