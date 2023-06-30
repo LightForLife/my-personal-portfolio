@@ -9,7 +9,7 @@ type Props = {
   experience: Experience;
 };
 
-export default function ExperienceCard({ experience }: Props) {
+function ExperienceCard({ experience }: Props) {
   return (
     <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[480px] md:w-[560px] xl:w-[900px] snap-center bg-[#292929] p-8 overflow-hidden shadow-xl">
       <motion.img
@@ -54,3 +54,5 @@ export default function ExperienceCard({ experience }: Props) {
     </article>
   );
 }
+
+export default ExperienceCard;

@@ -23,8 +23,6 @@ import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
 import { fetchSocials } from "@/utills/fetchSocials";
 
-const inter = Inter({ subsets: ["latin"] });
-
 type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
