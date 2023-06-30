@@ -3,7 +3,7 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "@/typings";
-import { RiDownload2Fill } from "react-icons/ri";
+import { MdDownload } from "react-icons/md";
 import Link from "next/link";
 
 type Props = { socials: Social[] };
@@ -24,6 +24,9 @@ export default function Header({ socials }: Props) {
             url={social.url}
             fgColor="gray"
             bgColor="transparent"
+            className="hover:scale-110 duration-200 cursor-pointer"
+            // rel="noopener noreferrer"
+            target="_blank"
           />
         ))}
       </motion.div>
@@ -34,24 +37,35 @@ export default function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
-        <RiDownload2Fill
-          size="1.2rem"
-          className="hidden md:inline-flex text-sm text-gray-400"
-        />
+        {/* <SocialIcon
+          className="cursor-pointer"
+          network="download"
+          fgColor="gray"
+          bgColor="transparent"
+          style={{ height: 50, width: 50 }}
+          url="test.pdf"
+          download
+        /> */}
+
         <a href="test.pdf" download className="uppercase text-sm text-gray-400">
-          <span className="cursor-pointer hidden md:inline-flex">
-            Download CV
+          <MdDownload size="1.4rem" className="text-gray-400 mr-2" />
+        </a>
+
+        <a href="test.pdf" download className="uppercase text-sm text-gray-400">
+          <span className="cursor-pointer hidden md:inline-flex mr-3 ">
+            Download
           </span>
         </a>
 
+        <SocialIcon
+          className="cursor-pointer"
+          network="email"
+          fgColor="gray"
+          bgColor="transparent"
+          style={{ height: 50, width: 50 }}
+          url="#contact"
+        />
         <Link href="#contact" className="uppercase text-sm text-gray-400">
-          {/* <SocialIcon
-            className="cursor-pointer"
-            network="email"
-            fgColor="gray"
-            bgColor="transparent"
-            style={{ height: 50, width: 50 }}
-          /> */}
           <span className="cursor-pointer hidden md:inline-flex">
             Get In Touch
           </span>

@@ -9,7 +9,7 @@ import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import Link from "next/link";
 import Image from "next/image";
-import foto from "../public/my-foto.png";
+import logo from "../public/logo.png";
 import { PageInfo } from "@/typings";
 import { Experience } from "@/typings";
 import { Skill } from "@/typings";
@@ -21,6 +21,8 @@ import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
 import { fetchSocials } from "@/utills/fetchSocials";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +33,6 @@ type Props = {
   projects: Project[];
   socials: Social[];
 };
-
 export default function Home({
   pageInfo,
   experiences,
@@ -81,19 +82,20 @@ export default function Home({
       </section>
 
       {/* Footer */}
-      <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-center">
+
+      <footer className="sticky bottom-5">
+        <div className="flex items-center justify-center ">
+          <Link href="#hero">
             <Image
-              src={foto}
+              src={logo}
               width={600}
               height={600}
               alt="Button to top"
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer hover:scale-105 duration-200"
             ></Image>
-          </div>
-        </footer>
-      </Link>
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }

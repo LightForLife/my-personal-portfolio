@@ -36,7 +36,7 @@ function Projects({ projects }: Props) {
           navigation={true}
           modules={[Navigation]}
           breakpoints={{ 700: { slidesPerView: 1 } }}
-          className="projectsSlider "
+          className="projectsSlider z-30"
         >
           {projects.map((project, i) => (
             <SwiperSlide key={i}>
@@ -51,24 +51,18 @@ function Projects({ projects }: Props) {
                   className=" w-[460px] md:w-[540px] xl:w-[600px]"
                 />
 
-                <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                  <span className="block text-2xl font-semibold text-center">
-                    Team Project {i + 1} of {projects.length}
-                  </span>{" "}
+                <div className="space-y-8 px-0 md:px-10 max-w-6xl">
                   <Link
                     href={project.linkToBuild}
                     // rel="noopener noreferrer"
                     target="_blank"
                     className="text-4xl font-semibold text-center underline decoration-[#F7AB0A]/50"
                   >
-                    {/* <span className="underline decoration-[#F7AB0A]/50">
-                      Case Study {i + 1} of {projects.length}
-                    </span>{" "} */}
-                    {/* <span className="underline decoration-[#F7AB0A]/50">
-                      Case Study {i + 1} of {projects.length}
-                    </span>{" "} */}
                     {project.title}
                   </Link>
+                  <span className="block text-2xl font-semibold text-center">
+                    Team Project {i + 1} of {projects.length}
+                  </span>
                   <div className="flex items-center space-x-2 justify-center">
                     {project?.technologies.map((technology) => (
                       <Image

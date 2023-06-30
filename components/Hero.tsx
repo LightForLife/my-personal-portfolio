@@ -42,16 +42,16 @@ export default function Hero({ pageInfo }: Props) {
           <Cursor cursorColor="#F7AB0A" />
         </h1>
         <div className="pt-5">
-          <Link href="#about">
+          <Link href="#about" replace={true}>
             <button className="heroButton">About</button>
           </Link>
-          <Link href="#experience">
+          <Link href="#experience" passHref legacyBehavior>
             <button className="heroButton">Experience</button>
           </Link>
-          <Link href="#skills">
+          <Link href="#skills" replace={false}>
             <button className="heroButton">Skills</button>
           </Link>
-          <Link href="#projects">
+          <Link href="#projects" replace={false}>
             <button className="heroButton">Projects</button>
           </Link>
         </div>
