@@ -9,13 +9,13 @@ import WorkExperience from "@/components/WorkExperience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
-import logo from "../public/logo.png";
+import logo from "@/public/logo.png";
 import { PageInfo } from "@/typings";
 import { Experience } from "@/typings";
 import { Skill } from "@/typings";
 import { Project } from "@/typings";
 import { Social } from "@/typings";
-import { fetchInformation } from "@/utills/fetchInformation";
+import { fetchPageInfo } from "@/utills/fetchPageInfo";
 import { fetchExperiences } from "@/utills/fetchExperiences";
 import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
@@ -96,7 +96,7 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const pageInfo: PageInfo = await fetchInformation();
+  const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();

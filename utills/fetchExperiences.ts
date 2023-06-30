@@ -1,4 +1,4 @@
-import { Experience } from "../typings";
+import { Experience } from "@/typings";
 
 export const fetchExperiences = async () => {
   const res = await fetch(
