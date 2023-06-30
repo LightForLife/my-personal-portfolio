@@ -15,7 +15,7 @@ import { Experience } from "@/typings";
 import { Skill } from "@/typings";
 import { Project } from "@/typings";
 import { Social } from "@/typings";
-import { fetchPageInfo } from "@/utills/fetchPageInfo";
+import { fetchInformation } from "@/utills/fetchInformation";
 import { fetchExperiences } from "@/utills/fetchExperiences";
 import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
@@ -96,7 +96,7 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const pageInfo: PageInfo = await fetchPageInfo();
+  const pageInfo: PageInfo = await fetchInformation();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
