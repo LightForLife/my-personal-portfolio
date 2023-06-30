@@ -1,5 +1,3 @@
-import { GetStaticProps } from "next";
-import { Inter } from "next/font/google";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -97,7 +95,7 @@ export default function Home({
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export async function getStaticProps() {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -108,4 +106,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: { pageInfo, experiences, skills, projects, socials },
     revalidate: 10,
   };
-};
+}
