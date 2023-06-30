@@ -12,6 +12,7 @@ type Props = {
 };
 
 function Hero({ pageInfo }: Props) {
+  // console.log(pageInfo);
   const [text, helper] = useTypewriter({
     words: [
       `Hi, The Name's ${pageInfo?.name}`,
@@ -27,12 +28,12 @@ function Hero({ pageInfo }: Props) {
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src={urlFor(pageInfo?.heroImage).url()}
+        src={urlFor(pageInfo.heroImage).url()}
         width={600}
         height={600}
         alt="Author's picture"
         placeholder="blur"
-        blurDataURL={urlFor(pageInfo?.heroImage).url()}
+        blurDataURL={urlFor(pageInfo.heroImage).url()}
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
