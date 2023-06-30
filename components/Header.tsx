@@ -25,8 +25,6 @@ export default function Header({ socials }: Props) {
             fgColor="gray"
             bgColor="transparent"
             className="hover:scale-110 duration-200 cursor-pointer"
-            // rel="noopener noreferrer"
-            target="_blank"
           />
         ))}
       </motion.div>
@@ -37,16 +35,6 @@ export default function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
-        {/* <SocialIcon
-          className="cursor-pointer"
-          network="download"
-          fgColor="gray"
-          bgColor="transparent"
-          style={{ height: 50, width: 50 }}
-          url="test.pdf"
-          download
-        /> */}
-
         <a href="test.pdf" download className="uppercase text-sm text-gray-400">
           <MdDownload size="1.4rem" className="text-gray-400 mr-2" />
         </a>

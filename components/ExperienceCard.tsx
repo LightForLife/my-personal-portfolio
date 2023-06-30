@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Experience } from "@/typings";
 import { urlFor } from "@/sanity";
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
-// import js from "../../../public/js.png";
 
 type Props = {
   experience: Experience;

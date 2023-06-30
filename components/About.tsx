@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import image from "next/image";
-import foto from "@/public/my-foto.png";
 import { PageInfo } from "@/typings";
 import { urlFor } from "@/sanity";
 
@@ -21,6 +19,7 @@ export default function About({ pageInfo }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
+      <div></div>
       <motion.img
         initial={{ x: -200, opacity: 0 }}
         transition={{ duration: 1.2 }}

@@ -1,12 +1,9 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import pet from "../../../public/Pet.png";
 import { Project } from "@/typings";
 import { urlFor } from "@/sanity";
 import Image from "next/image";
-// import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";

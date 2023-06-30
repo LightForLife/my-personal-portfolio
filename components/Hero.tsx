@@ -3,7 +3,6 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
-import foto from "../../../public/my-foto.png";
 import Link from "next/link";
 import { PageInfo } from "@/typings";
 import { urlFor } from "@/sanity";
@@ -32,6 +31,8 @@ export default function Hero({ pageInfo }: Props) {
         width={600}
         height={600}
         alt="Author's picture"
+        placeholder="blur"
+        blurDataURL={urlFor(pageInfo?.heroImage).url()}
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">

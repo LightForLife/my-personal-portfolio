@@ -1,5 +1,9 @@
 import { GetStaticProps } from "next";
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -7,8 +11,6 @@ import WorkExperience from "@/components/WorkExperience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
-import Link from "next/link";
-import Image from "next/image";
 import logo from "../public/logo.png";
 import { PageInfo } from "@/typings";
 import { Experience } from "@/typings";
@@ -20,9 +22,6 @@ import { fetchExperiences } from "@/utills/fetchExperiences";
 import { fetchSkills } from "@/utills/fetchSkills";
 import { fetchProjects } from "@/utills/fetchProjects";
 import { fetchSocials } from "@/utills/fetchSocials";
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
