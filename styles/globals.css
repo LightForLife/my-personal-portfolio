@@ -15,19 +15,20 @@
 @layer base {
   .projectsSlider .swiper-button-prev,
   .projectsSlider .swiper-button-next {
-    @apply bg-[#F7AB0A] text-white top-[96%] md:top-[90%] w-[46px] rounded-full z-20;
+    @apply text-[#F7AB0A] hover:text-[#F7AB0A]/80 duration-200 w-[60px] h-[60px] rounded-full z-20;
   }
 
+  /* top-[90%] md:top-[90%] w-[46px] */
   .projectsSlider .swiper-button-prev {
-    @apply left-[35%] md:left-[40%] lg:left-[45%];
+    @apply mt-5 left-[5%];
   }
 
   .projectsSlider .swiper-button-next {
-    @apply right-[35%] md:right-[40%] lg:right-[45%];
+    @apply mt-5 right-[5%];
   }
 
   .projectsSlider .swiper-button-prev::after,
   .projectsSlider .swiper-button-next::after {
-    @apply text-lg;
+    @apply text-5xl;
   }
 }

@@ -45,7 +45,7 @@ function Projects({ projects }: Props) {
                   viewport={{ once: true }}
                   src={urlFor(project?.image).width(600).url()}
                   alt="A picture of the project on different devices"
-                  className=" w-[460px] md:w-[540px] xl:w-[600px]"
+                  className=" w-[460px] md:w-[540px] xl:w-[700px]"
                 />
 
                 <div className="space-y-8 px-0 md:px-10 max-w-6xl">

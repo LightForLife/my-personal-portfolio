@@ -11,13 +11,13 @@ type Props = {
 
 function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[480px] md:w-[560px] xl:w-[900px] snap-center bg-[#292929] p-8 overflow-hidden shadow-xl">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[480px] md:w-[560px] xl:w-[640px] snap-center bg-[#292929] p-8 overflow-hidden shadow-xl">
       <motion.img
         initial={{ y: -100, opacity: 0 }}
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        className="h-32 w-32 rounded-full object-cover object-center"
         src={urlFor(experience.companyImage).url()}
         alt="Company logo picture"
       />
