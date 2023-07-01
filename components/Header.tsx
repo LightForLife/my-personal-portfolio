@@ -25,6 +25,7 @@ function Header({ socials }: Props) {
             fgColor="gray"
             bgColor="transparent"
             className="hover:scale-110 duration-200 cursor-pointer"
+            target="_blank"
           />
         ))}
       </motion.div>

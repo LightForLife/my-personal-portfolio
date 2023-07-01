@@ -15,12 +15,11 @@ import { Experience } from "@/typings";
 import { Skill } from "@/typings";
 import { Project } from "@/typings";
 import { Social } from "@/typings";
-// import { fetchPageInfo } from "@/utills/fetchPageInfo";
-import { fetchExperiences } from "@/utills/fetchExperiences";
-import { fetchSkills } from "@/utills/fetchSkills";
-import { fetchProjects } from "@/utills/fetchProjects";
-import { fetchSocials } from "@/utills/fetchSocials";
-import { loadInfo } from "./api/getPageInfo";
+import { getPageInfo } from "@/pages/api/getPageInfo";
+import { getExperience } from "@/pages/api/getExperience";
+import { getProjects } from "@/pages/api/getProjects";
+import { getSkills } from "@/pages/api/getSkills";
+import { getSocials } from "@/pages/api/getSocials";
 
 type Props = {
   pageInfo: PageInfo;
@@ -97,11 +96,11 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const pageInfo: PageInfo = await loadInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+  const pageInfo: PageInfo = await getPageInfo();
+  const experiences: Experience[] = await getExperience();
+  const skills: Skill[] = await getSkills();
+  const projects: Project[] = await getProjects();
+  const socials: Social[] = await getSocials();
 
   return {
     props: { pageInfo, experiences, skills, projects, socials },
