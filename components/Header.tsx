@@ -36,11 +36,19 @@ function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
-        <a href="test.pdf" download className="uppercase text-sm text-gray-400">
+        <a
+          href="Artur_Levchenko.pdf"
+          download
+          className="uppercase text-sm text-gray-400"
+        >
           <MdDownload size="1.4rem" className="text-gray-400 mr-2" />
         </a>
 
-        <a href="test.pdf" download className="uppercase text-sm text-gray-400">
+        <a
+          href="Artur_Levchenko.pdf"
+          download
+          className="uppercase text-sm text-gray-400"
+        >
           <span className="cursor-pointer hidden md:inline-flex mr-3 ">
             Download
           </span>
